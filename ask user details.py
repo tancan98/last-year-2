@@ -1,12 +1,21 @@
-Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:37:02) [MSC v.1924 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license()" for more information.
->>> 
+#This is a simple quiz
+#initial score
+
+
+score = 0
 #Ask for name
-name = input("Please enter your name : ")
+def greet():
+    global name
+    while True:
+        name = input("Please enter your name : ")
+        if name.isalpha():
+            break
+        print("Enter alphabets only")
+greet()
 
 #Ask for age
-age = input("Please enter your age : ")
-
-
-
-#
+while True:
+    age = input("Please enter your age : ")
+    if age.isnumeric():
+        break
+    print("Enter Numbers only")
