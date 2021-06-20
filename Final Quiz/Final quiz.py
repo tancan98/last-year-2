@@ -59,8 +59,7 @@ if status == 'no' or status == 'n' or status == 'b':
 #what if the user is ready
 if status == 'yes' or status == 'y' or status == 'a':
     print("Thats Amazing.")
-
-
+print("  ")
 def rounds():
     global r , total
     while True:
@@ -72,12 +71,14 @@ def rounds():
                 print("Please enter the rounds in 1-10 only")
         except:
             print('Please enter rounds in numbers only (The max is 10)')
+print("  ")
 
 print('*****************************************************************')      
 
 print("----------- WELCOME TO MY QUIZ ------------")
       
-print('*****************************************************************')     
+print('*****************************************************************')
+
 questions=[
 [
     "What is the smallest country in the world?",
@@ -153,7 +154,7 @@ while r >0:
         if user_answers =='a' or user_answers == 'b' or user_answers == 'c' :
             if user_answers == answer:
                 print("***************************")
-                print("nice you got it right ")
+                print("Nice You Got It Right Answer ")
                 print("***************************")
                 score +=1
                 print("=======")
@@ -161,7 +162,7 @@ while r >0:
                 print("=======")
             else:
                 print("**********************************************************")
-                print("oops the answer you have chosen is not correct. The right answer is ",answer)    
+                print("The Answer You have Chosen Is Not Correct. The Right Answer Is ",answer)    
                 print("**********************************************************")
                 print("=======")
                 print("your score is",score)
@@ -182,6 +183,8 @@ while r >0:
 print("\nCongratulations {}!".format(name))
 print("Your Final Score Is",score)
 print("Thanks For Playing")
+
+
 
 
 
