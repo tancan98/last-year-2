@@ -115,7 +115,7 @@ questions=[
      
 [
     "Name the Coffee shop in US sitcom Friends?",
-    {'answer':'a','option':'\na.Cenral Perk \nb.Starbucks \nc.Coffee Club '}
+    {'answer':'a','option':'\na.Central Perks \nb.Starbucks \nc.Coffee Club '}
     ],    
 
 [
@@ -181,8 +181,7 @@ while r >0:
 
 print("\nCongratulations {}!".format(name))
 print("Your Final Score Is",score)
-print("Thanks For Playing : ")
-
+print("Thanks For Playing")
 
 
 
