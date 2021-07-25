@@ -3,80 +3,8 @@ import datetime
 import time
 x=datetime.datetime.now()
 
-print("    ")
-print(".................................................................")
-print("    ")
-print("                 WELCOME TO MY GENERAL KNOWLEDGE QUIZ")
-print("    ")
-print("-----------------------------------------------------------------")
-print("    ")
-
-print(".................................................................")
-
-print("      -------------- Date & Time -------------- ")
-print("             ",x,"                   ")
-print("----------- This is a quiz by Ishaan Sonar ------------")
-
-print(".................................................................")
-print("    ")
-print("    ")
-
-
-#This is a simple quiz
 #initial score
-
 score = 0
-#Ask for name
-def greet():
-    global name
-    while True:
-        name = input("Please enter your name : ")
-        if name.replace(' ','').isalpha():
-            break
-        print("Enter alphabets only")
-greet()
-
-#Ask for age
-while True:
-    age = input("Please enter your age : ")
-    if age.replace(' ','').isnumeric():
-        break
-    print("Enter Numbers only")
-
-    
-    
-    #Ask if they are ready to take the quiz
-status = input("Are you ready to take this general knowledge quiz :{}?: \na. Yes \nb. No \n=>".format( name)).lower()
-
-#What if the user is not ready
-if status == 'no' or status == 'n' or status == 'b': 
-    print("See you next time.")
-    exit()
-        
-    
-#what if the user is ready
-if status == 'yes' or status == 'y' or status == 'a':
-    print("Thats Amazing.")
-print("  ")
-def rounds():
-    global r , total
-    while True:
-        try:
-            r = int(input("\nPlease enter how many rounds do you want to play there are a total of 10 round at max. : "))
-            print("...................................................")
-            if 0<r<=10:
-                break
-            else:
-                print("Please enter the rounds in 1-10 only")
-        except:
-            print('Please enter rounds in numbers only (The max is 10)')
-print("  ")
-
-print('*****************************************************************')      
-
-print("----------- WELCOME TO MY QUIZ ------------")
-      
-print('*****************************************************************')
 
 questions=[
 [
@@ -135,8 +63,93 @@ questions=[
 ]
 
 shuffle(questions)
+#This is a simple quiz
 
-rounds()
+#Ask for name
+def greet():
+    global name
+    while True:
+        name = input("Please enter your name : ")
+        if name.replace(' ','').isalpha():
+            break
+        print("Enter alphabets only")
+
+
+def age(): #To ask for user's age
+    global age
+    while True:
+        age = (input("Please Write Your Age : "))
+        if age.replace(' ','').isnumeric(): #Ignores spaces
+            if 3< int(age)<100:
+                break
+            else:
+                print("Sorry you are not in the age group to play this quiz.") #Does not allo ages between 3 and 100
+                exit()
+        else:
+            print("You have entered an ivalid input") #Error message
+
+
+
+#Ask if they are ready to take the quiz
+def status():
+    while True:
+        status = input("Are you ready to take this general knowledge quiz ?: \na. Yes \nb. No \n=>")
+        if status == 'no' or status == 'n' or status == 'b': 
+            print("See you next time.")
+            exit()
+        if status == 'yes' or status == 'y' or status == 'a':
+            print("Thats Amazing.")
+            print("  ")
+            break
+
+
+def rounds():
+    global r , total
+    while True:
+        try:
+            r = int(input("\nPlease enter how many rounds do you want to play there are a total of 10 round at max. : "))
+            print("...................................................")
+            if 0<r<=10:
+                break
+            else:
+                print("Please enter the rounds in 1-10 only")
+        except:
+            print('Please enter rounds in numbers only (The max is 10)')
+print("  ")
+
+print('*****************************************************************')
+
+print("    ")
+print("#################################################################")
+print("#################################################################")
+print("    ")
+print("                 WELCOME TO MY GENERAL KNOWLEDGE QUIZ")
+print("    ")
+print("-----------------------------------------------------------------")
+print("-----------------------------------------------------------------")
+print("    ")
+
+
+print("#################################################################")
+
+print("      -------------- Date & Time -------------- ")
+print("             ",x,"                   ")
+print("----------- This is a quiz by Ishaan Sonar ------------")
+
+print("#################################################################")
+print("    ")
+print("    ")
+
+
+#Calling The Fuction
+
+
+
+greet()#calling the greet function
+age()#calling the age function
+status()#calling the status function
+rounds()#calling the rounds function
+
 ## score mechanics
 while r >0:
     
@@ -147,6 +160,28 @@ while r >0:
     option = data['option']
 
     print(q)
+            else:
+                print("**********************************************************")
+                print("The Answer You have Chosen Is Not Correct. The Right Answer Is ",answer)    
+                print("**********************************************************")
+                print("=======")
+                print("your score is",score)
+                print("=======")
+
+
+            del questions[0]
+            r-=1
+            break
+        else:
+            print("please enter the alphabet for the chosen option")
+           
+
+           
+                   
+
+
+print("Your Final Score Is",score)
+print("Thanks For Playing")
     print(option)
     while True:
         user_answers = input("Please enter your answer here : ").lower().replace(' ','')
@@ -179,9 +214,9 @@ while r >0:
                    
 
 
-print("\nCongratulations {}!".format(name))
 print("Your Final Score Is",score)
 print("Thanks For Playing")
+
 
 
 
